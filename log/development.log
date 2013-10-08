@@ -24388,3 +24388,1048 @@ Processing by PostsController#index as HTML
   [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
   Rendered posts/index.html.erb within layouts/application (4.9ms)
 Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateComments (20131008035337)
+  [1m[35m (169.7ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `commenter` varchar(255), `body` text, `post_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (443.5ms)[0m  [1mCREATE INDEX `index_comments_on_post_id` ON `comments` (`post_id`) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (16.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20131008035337')[0m
+  [1m[35m (87.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-08 10:01:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 1664ms (Views: 1618.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:01:46 +0530
+
+
+Started GET "/posts" for 127.0.0.1 at 2013-10-08 10:01:50 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT `posts`.* FROM `posts`
+  Rendered posts/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 80ms (Views: 35.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-10-08 10:01:51 +0530
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (123.7ms)
+  Rendered posts/new.html.erb within layouts/application (155.3ms)
+Completed 200 OK in 162ms (Views: 160.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2013-10-08 10:02:15 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pLync6/+cTKHxH2KHeuob+PGqO2Toghvr6rorQ+a7sI=", "post"=>{"title"=>"Comments test", "text"=>"I test the comments"}, "commit"=>"Save Post"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `posts` (`created_at`, `text`, `title`, `updated_at`) VALUES ('2013-10-08 04:32:15', 'I test the comments', 'Comments test', '2013-10-08 04:32:15')
+  [1m[36m (59.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 252ms (ActiveRecord: 60.0ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.8ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (136.9ms)
+Completed 200 OK in 150ms (Views: 142.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:02:16 +0530
+
+
+Started POST "/posts/7/comments" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pLync6/+cTKHxH2KHeuob+PGqO2Toghvr6rorQ+a7sI=", "comment"=>{"commenter"=>"rakesh", "body"=>"comments on the post who have title comments test"}, "commit"=>"Create Comment", "post_id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `comments` (`body`, `commenter`, `created_at`, `post_id`, `updated_at`) VALUES ('comments on the post who have title comments test', 'rakesh', '2013-10-08 04:33:06', 7, '2013-10-08 04:33:06')[0m
+  [1m[35m (112.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 123ms (ActiveRecord: 113.2ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  Rendered posts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:03:06 +0530
+
+
+Started GET "/posts/7/edit" for 127.0.0.1 at 2013-10-08 10:03:32 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  Rendered posts/_form.html.erb (2.9ms)
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7
+  Rendered posts/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:15 +0530
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-10-08 10:04:31 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Post with id=1):
+  app/controllers/posts_controller.rb:17:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 2[0m
+  Rendered posts/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:04:46 +0530
+
+
+Started POST "/posts/2/comments" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pLync6/+cTKHxH2KHeuob+PGqO2Toghvr6rorQ+a7sI=", "comment"=>{"commenter"=>"comments hahahah", "body"=>"bla bla ablalblb bal"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `comments` (`body`, `commenter`, `created_at`, `post_id`, `updated_at`) VALUES ('bla bla ablalblb bal', 'comments hahahah', '2013-10-08 04:35:15', 2, '2013-10-08 04:35:15')
+  [1m[36m (103.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 113ms (ActiveRecord: 104.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 2[0m
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:15 +0530
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:05:20 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered posts/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:05:21 +0530
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.8ms)
+  Rendered posts/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:27 +0530
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:29 +0530
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (2.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.5ms)
+  Rendered posts/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:25:30 +0530
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:08 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (Missing partial comments/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comments/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416253060'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.5ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:50 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.3ms)
+  Rendered posts/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.7ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (3.9ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.1ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.0ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:51 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (27.3ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:52 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.3ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:52 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.3ms)
+  Rendered posts/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:52 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:27:52 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (Missing partial comment/from with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/vinod/rails_work/blog/app/views"
+):
+    12: <%= render @post.comments %>
+    13: 
+    14: <h2>Add a comment:</h2>
+    15: <%= render "comment/from" %>
+    16: 
+    17: <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    18: <%= link_to 'Back to Posts', posts_path %>
+  app/views/posts/show.html.erb:15:in `_app_views_posts_show_html_erb__3990775976861298841_70101416116920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448@blog/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 7[0m
+  Rendered comments/_comment.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 10:28:43 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-08 21:58:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 363ms (Views: 307.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-08 21:58:39 +0530
